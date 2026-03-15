@@ -14,176 +14,308 @@ const DIV_AVG_TIME = {
   "Bantamweight W":12.78,"Flyweight W":12.07,
 };
 
-const fights = [
-  { id:1, card:"PRELIMS", time:"16:00", rounds:3, wc:"Strawweight W", lbs:"115 lbs", ou:2.5,
-    f1:{name:"P. Rodriguez",full:"Piera Rodriguez",country:"VEN",record:"11-2",age:33,odds:-165,slpm:3.54,sapm:2.81,sacc:47,sdef:55,td:4.53,tdacc:54,tddef:73,sub:0.0,ko:2,dec:7,s:2,reach:63,layoff:224,recentForm:[{r:"W",opp:"K.Souza",oppRank:99,method:"DEC"},{r:"W",opp:"Knutsson",oppRank:99,method:"DEC"},{r:"L",opp:"Carnelossi",oppRank:99,method:"DQ"},{r:"L",opp:"Robertson",oppRank:8,method:"SUB"},{r:"W",opp:"Hansen",oppRank:99,method:"DEC"}],lossTypes:{ko:0,sub:1,dec:1},rank:99},
-    f2:{name:"S. Hughes",full:"Sam Hughes",country:"USA",record:"11-6",age:33,odds:140,slpm:4.34,sapm:4.44,sacc:46,sdef:58,td:1.23,tdacc:35,tddef:60,sub:0.2,ko:1,dec:7,s:3,reach:64,layoff:196,recentForm:[{r:"W",opp:"Bannon",oppRank:99,method:"SUB"},{r:"W",opp:"Luciano",oppRank:99,method:"DEC"},{r:"W",opp:"Dudakova",oppRank:99,method:"DEC"},{r:"L",opp:"Jauregui",oppRank:99,method:"DEC"},{r:"W",opp:"Amorim",oppRank:99,method:"DEC"}],lossTypes:{ko:0,sub:1,dec:5},rank:99}},
-  { id:2, card:"PRELIMS", time:"16:20", rounds:3, wc:"Bantamweight", lbs:"135 lbs", ou:2.5,
-    f1:{name:"L. Lacerda",full:"Luan Luiz Lacerda",country:"BRA",record:"13-3",age:32,odds:-162,slpm:4.02,sapm:5.79,sacc:46,sdef:46,td:2.29,tdacc:41,tddef:66,sub:0.9,ko:5,dec:4,s:4,reach:71,layoff:154,recentForm:[{r:"W",opp:"S.Oliveira",oppRank:99,method:"SUB"},{r:"L",opp:"Blackshear",oppRank:99,method:"KO"},{r:"L",opp:"Stamann",oppRank:99,method:"DEC"},{r:"W",opp:"Sosa",oppRank:99,method:"KO"},{r:"W",opp:"Durden",oppRank:99,method:"KO"}],lossTypes:{ko:2,sub:0,dec:1},rank:99},
-    f2:{name:"H. Sosa",full:"Hecher Sosa",country:"ESP",record:"14-1",age:29,odds:225,slpm:2.13,sapm:0.87,sacc:50,sdef:55,td:4.00,tdacc:36,tddef:100,sub:2.0,ko:0,dec:1,s:13,reach:70,layoff:179,recentForm:[{r:"W",opp:"M.Lee",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"SUB"},{r:"W",opp:"opp",oppRank:99,method:"SUB"},{r:"W",opp:"opp",oppRank:99,method:"SUB"},{r:"L",opp:"Lacerda",oppRank:99,method:"KO"}],lossTypes:{ko:1,sub:0,dec:0},rank:99}},
-  { id:3, card:"PRELIMS", time:"16:40", rounds:3, wc:"Bantamweight W", lbs:"135 lbs", ou:2.5,
-    f1:{name:"B. Mesquita",full:"Beatriz Mesquita",country:"BRA",record:"6-0",age:34,odds:-550,slpm:3.20,sapm:1.80,sacc:52,sdef:65,td:2.80,tdacc:58,tddef:78,sub:2.4,ko:1,dec:0,s:4,reach:64,layoff:154,recentForm:[{r:"W",opp:"Alekseeva",oppRank:99,method:"SUB"},{r:"W",opp:"LFA opp",oppRank:99,method:"SUB"},{r:"W",opp:"LFA opp",oppRank:99,method:"KO"},{r:"W",opp:"LFA opp",oppRank:99,method:"SUB"},{r:"W",opp:"Ramos",oppRank:99,method:"SUB"}],lossTypes:{ko:0,sub:0,dec:0},rank:99},
-    f2:{name:"M. Rendon",full:"Montserrat Rendon",country:"MEX",record:"7-1",age:36,odds:400,slpm:3.09,sapm:3.42,sacc:28,sdef:59,td:2.00,tdacc:37,tddef:100,sub:0.3,ko:0,dec:5,s:2,reach:68,layoff:182,recentForm:[{r:"W",opp:"A.Pereira",oppRank:99,method:"DEC"},{r:"L",opp:"Zhelezniakova",oppRank:99,method:"DEC"},{r:"W",opp:"Vidal",oppRank:99,method:"DEC"},{r:"W",opp:"Hughes",oppRank:99,method:"DEC"},{r:"W",opp:"Kassem",oppRank:99,method:"SUB"}],lossTypes:{ko:0,sub:0,dec:1},rank:99}},
-  { id:4, card:"PRELIMS", time:"17:00", rounds:3, wc:"Middleweight", lbs:"185 lbs", ou:2.5,
-    f1:{name:"B. Tavares",full:"Brad Tavares",country:"USA",record:"21-12",age:37,odds:200,slpm:3.42,sapm:3.36,sacc:43,sdef:54,td:0.73,tdacc:26,tddef:81,sub:0.0,ko:7,dec:13,s:1,reach:74,layoff:189,recentForm:[{r:"L",opp:"Bryczek",oppRank:99,method:"KO"},{r:"W",opp:"Meerschaert",oppRank:99,method:"DEC"},{r:"L",opp:"J.Park",oppRank:99,method:"DEC"},{r:"L",opp:"Rodrigues",oppRank:99,method:"KO"},{r:"W",opp:"Weidman",oppRank:99,method:"DEC"}],lossTypes:{ko:5,sub:1,dec:6},rank:99},
-    f2:{name:"E. Anders",full:"Eryk Anders",country:"USA",record:"17-9",age:37,odds:-183,slpm:3.51,sapm:4.09,sacc:48,sdef:50,td:1.75,tdacc:24,tddef:80,sub:0.1,ko:9,dec:5,s:3,reach:75,layoff:217,recentForm:[{r:"L",opp:"Duncan",oppRank:99,method:"KO"},{r:"W",opp:"Weidman",oppRank:99,method:"KO"},{r:"W",opp:"Pickett",oppRank:99,method:"DEC"},{r:"L",opp:"Barriault",oppRank:99,method:"DEC"},{r:"W",opp:"Daukaus",oppRank:99,method:"KO"}],lossTypes:{ko:4,sub:2,dec:3},rank:99}},
-  { id:5, card:"PRELIMS", time:"17:20", rounds:3, wc:"Lightweight", lbs:"155 lbs", ou:2.5,
-    f1:{name:"B. Oki",full:"Bolaji Oki",country:"BEL",record:"10-3",age:29,odds:125,slpm:6.59,sapm:5.15,sacc:44,sdef:61,td:1.01,tdacc:60,tddef:66,sub:0.0,ko:5,dec:4,s:1,reach:73,layoff:189,recentForm:[{r:"L",opp:"M.Jones",oppRank:99,method:"KO"},{r:"W",opp:"Aswell Jr",oppRank:99,method:"DEC"},{r:"L",opp:"C.Duncan",oppRank:99,method:"SUB"},{r:"W",opp:"Cuamba",oppRank:99,method:"DEC"},{r:"W",opp:"Salvador",oppRank:99,method:"KO"}],lossTypes:{ko:1,sub:1,dec:1},rank:99},
-    f2:{name:"M. Sousa",full:"Manoel Sousa",country:"BRA",record:"13-1",age:27,odds:-137,slpm:3.23,sapm:1.31,sacc:58,sdef:55,td:0.00,tdacc:0,tddef:62,sub:2.3,ko:2,dec:2,s:9,reach:70,layoff:196,recentForm:[{r:"W",opp:"C.Perez",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"SUB"},{r:"W",opp:"opp",oppRank:99,method:"SUB"},{r:"W",opp:"opp",oppRank:99,method:"SUB"},{r:"L",opp:"opp",oppRank:99,method:"DEC"}],lossTypes:{ko:0,sub:0,dec:1},rank:99}},
-  { id:6, card:"PRELIMS", time:"17:40", rounds:3, wc:"Bantamweight", lbs:"135 lbs", ou:2.5,
-    f1:{name:"E. Smith",full:"Elijah Smith",country:"USA",record:"9-1",age:22,odds:-176,slpm:4.45,sapm:3.40,sacc:47,sdef:47,td:3.51,tdacc:53,tddef:57,sub:0.9,ko:3,dec:4,s:2,reach:71,layoff:217,recentForm:[{r:"W",opp:"Kazama",oppRank:99,method:"KO"},{r:"W",opp:"Morales",oppRank:99,method:"DEC"},{r:"W",opp:"A.Tau",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"L",opp:"opp",oppRank:15,method:"DEC"}],lossTypes:{ko:0,sub:0,dec:1},rank:99},
-    f2:{name:"S. You",full:"SuYoung You",country:"KOR",record:"16-3",age:29,odds:200,slpm:2.28,sapm:1.96,sacc:46,sdef:70,td:3.80,tdacc:47,tddef:66,sub:0.4,ko:1,dec:10,s:5,reach:65,layoff:112,recentForm:[{r:"W",opp:"X.Long",oppRank:99,method:"DEC"},{r:"W",opp:"Cunningham",oppRank:99,method:"DEC"},{r:"W",opp:"Jieleyisi",oppRank:99,method:"DEC"},{r:"W",opp:"Zhawupasi",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"DEC"}],lossTypes:{ko:0,sub:1,dec:2},rank:99}},
-  { id:7, card:"MAIN CARD", time:"18:00", rounds:3, wc:"Heavyweight", lbs:"265 lbs", ou:1.5,
-    f1:{name:"V. Petrino",full:"Vitor Petrino",country:"BRA",record:"13-2",age:27,odds:-155,
-        slpm:2.75,sapm:2.48,sacc:46,sdef:47,td:3.04,tdacc:51,tddef:79,sub:0.8,
-        ko:7,dec:4,s:2,reach:77,layoff:154,
-        recentForm:[{r:"W",opp:"Petersen",oppRank:99,method:"KO"},{r:"W",opp:"Lane",oppRank:99,method:"SUB"},{r:"L",opp:"Jacoby",oppRank:99,method:"KO"},{r:"L",opp:"A.Smith",oppRank:99,method:"SUB"},{r:"W",opp:"Tybura",oppRank:10,method:"KO"}],
-        lossTypes:{ko:1,sub:1,dec:0},rank:99},
-    f2:{name:"S. Asplund",full:"Steven Asplund",country:"USA",record:"7-1",age:26,odds:240,
-        slpm:19.93,sapm:7.49,sacc:58,sdef:57,td:0.00,tdacc:0,tddef:100,sub:0.0,
-        ko:5,dec:2,s:0,reach:78,layoff:91,
-        recentForm:[{r:"W",opp:"Sharaf",oppRank:99,method:"KO"},{r:"W",opp:"Guarascio",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"L",opp:"opp",oppRank:99,method:"DEC"}],
-        lossTypes:{ko:0,sub:0,dec:1},rank:99}},
-  { id:8, card:"MAIN CARD", time:"18:20", rounds:3, wc:"Welterweight", lbs:"170 lbs", ou:2.5,
-    f1:{name:"C. Curtis",full:"Chris Curtis",country:"USA",record:"32-12",age:37,odds:130,
-        slpm:5.98,sapm:6.19,sacc:50,sdef:54,td:0.00,tdacc:0,tddef:82,sub:0.0,
-        ko:17,dec:13,s:2,reach:75,layoff:245,
-        recentForm:[{r:"W",opp:"M.Griffin",oppRank:99,method:"DEC"},{r:"L",opp:"Kopylov",oppRank:99,method:"KO"},{r:"L",opp:"B.Allen",oppRank:8,method:"DEC"},{r:"W",opp:"Barriault",oppRank:99,method:"DEC"},{r:"W",opp:"Buckley",oppRank:8,method:"DEC"}],
-        lossTypes:{ko:5,sub:2,dec:5},rank:99},
-    f2:{name:"M. Orolbay",full:"Myktybek Orolbay",country:"KGZ",record:"15-2-1",age:27,odds:-150,
-        slpm:3.24,sapm:3.31,sacc:48,sdef:50,td:5.48,tdacc:45,tddef:40,sub:0.6,
-        ko:5,dec:7,s:3,reach:74,layoff:112,
-        recentForm:[{r:"W",opp:"Hermansson",oppRank:99,method:"KO"},{r:"W",opp:"Musayev",oppRank:99,method:"SUB"},{r:"L",opp:"Rebecki",oppRank:99,method:"DEC"},{r:"W",opp:"Brener",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"}],
-        lossTypes:{ko:0,sub:1,dec:1},rank:99}},
-  { id:9, card:"MAIN CARD", time:"19:00", rounds:3, wc:"Flyweight", lbs:"125 lbs", ou:2.5,
-    f1:{name:"C. Johnson",full:"Charles Johnson",country:"USA",record:"18-7",age:34,odds:-135,
-        slpm:4.73,sapm:3.78,sacc:49,sdef:56,td:0.56,tdacc:20,tddef:66,sub:0.4,
-        ko:6,dec:10,s:2,reach:70,layoff:49,
-        recentForm:[{r:"W",opp:"Kavanagh",oppRank:99,method:"KO"},{r:"L",opp:"Temirov",oppRank:99,method:"DEC"},{r:"W",opp:"Sumudaerji",oppRank:99,method:"DEC"},{r:"W",opp:"J.Van",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"}],
-        lossTypes:{ko:2,sub:2,dec:3},rank:99},
-    f2:{name:"B. Silva",full:"Bruno Silva",country:"BRA",record:"15-7-2",age:35,odds:235,
-        slpm:3.82,sapm:4.55,sacc:50,sdef:52,td:2.30,tdacc:29,tddef:63,sub:0.3,
-        ko:5,dec:7,s:3,reach:65,layoff:147,
-        recentForm:[{r:"W",opp:"H.Park",oppRank:99,method:"SUB"},{r:"L",opp:"J.Van",oppRank:2,method:"KO"},{r:"L",opp:"M.Kape",oppRank:4,method:"KO"},{r:"W",opp:"Durden",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"}],
-        lossTypes:{ko:4,sub:1,dec:2},rank:99}},
-  { id:10, card:"MAIN CARD", time:"19:30", rounds:3, wc:"Light Heavyweight", lbs:"205 lbs", ou:2.5,
-    f1:{name:"I. Cutelaba",full:"Ion Cutelaba",country:"MDA",record:"19-11-1",age:31,odds:140,
-        slpm:4.26,sapm:3.34,sacc:43,sdef:47,td:3.77,tdacc:49,tddef:75,sub:0.1,
-        ko:11,dec:5,s:3,reach:75,layoff:126,
-        recentForm:[{r:"L",opp:"Bukauskas",oppRank:99,method:"DEC"},{r:"W",opp:"Aslan",oppRank:99,method:"SUB"},{r:"W",opp:"Erslan",oppRank:99,method:"DEC"},{r:"L",opp:"Lins",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"}],
-        lossTypes:{ko:6,sub:2,dec:3},rank:99},
-    f2:{name:"O. Sy",full:"Oumar Sy",country:"FRA",record:"12-1",age:29,odds:-155,
-        slpm:3.67,sapm:1.72,sacc:48,sdef:70,td:2.73,tdacc:36,tddef:100,sub:0.4,
-        ko:5,dec:5,s:2,reach:83,layoff:189,
-        recentForm:[{r:"W",opp:"Ribeiro",oppRank:99,method:"KO"},{r:"L",opp:"Menifield",oppRank:99,method:"DEC"},{r:"W",opp:"D.Jung",oppRank:12,method:"DEC"},{r:"W",opp:"Tokkos",oppRank:99,method:"SUB"},{r:"W",opp:"opp",oppRank:99,method:"KO"}],
-        lossTypes:{ko:0,sub:0,dec:1},rank:9}},
-  { id:11, card:"MAIN CARD", time:"20:00", rounds:3, wc:"Featherweight", lbs:"145 lbs", ou:2.5,
-    f1:{name:"M. Rahiki",full:"Marwan Rahiki",country:"ALG",record:"7-0",age:22,odds:-160,
-        slpm:5.96,sapm:6.10,sacc:47,sdef:56,td:0.00,tdacc:0,tddef:100,sub:2.1,
-        ko:3,dec:2,s:2,reach:72,layoff:151,
-        recentForm:[{r:"W",opp:"Mulumba",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"SUB"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"DEC"}],
-        lossTypes:{ko:0,sub:0,dec:0},rank:99},
-    f2:{name:"H. Hardwick",full:"Harry Hardwick",country:"GBR",record:"13-4-1",age:30,odds:230,
-        slpm:2.39,sapm:7.16,sacc:34,sdef:40,td:0.00,tdacc:0,tddef:0,sub:0.0,
-        ko:4,dec:6,s:3,reach:71,layoff:189,
-        recentForm:[{r:"L",opp:"Fernandes",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"L",opp:"opp",oppRank:99,method:"DEC"}],
-        lossTypes:{ko:2,sub:0,dec:2},rank:99}},
-  { id:12, card:"MAIN CARD", time:"20:30", rounds:3, wc:"Featherweight", lbs:"145 lbs", ou:1.5,
-    f1:{name:"A. Fili",full:"Andre Fili",country:"USA",record:"25-12",age:34,odds:160,
-        slpm:3.87,sapm:4.23,sacc:37,sdef:51,td:2.22,tdacc:45,tddef:71,sub:0.2,
-        ko:8,dec:15,s:2,reach:74,layoff:217,
-        recentForm:[{r:"W",opp:"C.Rodriguez",oppRank:99,method:"DEC"},{r:"L",opp:"Costa",oppRank:99,method:"SUB"},{r:"W",opp:"Swanson",oppRank:99,method:"DEC"},{r:"L",opp:"D.Ige",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"}],
-        lossTypes:{ko:3,sub:4,dec:5},rank:99},
-    f2:{name:"J. Delgado",full:"Jose Delgado",country:"COL",record:"10-2",age:26,odds:-147,
-        slpm:8.22,sapm:5.44,sacc:54,sdef:47,td:1.81,tdacc:42,tddef:60,sub:0.0,
-        ko:7,dec:2,s:1,reach:74,layoff:140,
-        recentForm:[{r:"L",opp:"N.Wood",oppRank:99,method:"DEC"},{r:"W",opp:"Amil",oppRank:99,method:"KO"},{r:"W",opp:"Matthews",oppRank:99,method:"KO"},{r:"W",opp:"Juarez",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"KO"}],
-        lossTypes:{ko:1,sub:0,dec:1},rank:99}},
-  { id:13, card:"MAIN CARD", time:"21:00", rounds:3, wc:"Strawweight W", lbs:"115 lbs", ou:2.5,
-    f1:{name:"A. Lemos",full:"Amanda Lemos",country:"BRA",record:"15-5-1",age:38,odds:174,
-        slpm:2.75,sapm:3.24,sacc:55,sdef:45,td:1.02,tdacc:62,tddef:64,sub:0.7,
-        ko:8,dec:4,s:3,reach:65,layoff:182,
-        recentForm:[{r:"L",opp:"Suarez",oppRank:2,method:"DEC"},{r:"W",opp:"Lucindo",oppRank:99,method:"DEC"},{r:"L",opp:"Jandiroba",oppRank:6,method:"SUB"},{r:"W",opp:"Dern",oppRank:4,method:"DEC"},{r:"L",opp:"Weili",oppRank:1,method:"DEC"}],
-        lossTypes:{ko:1,sub:2,dec:2},rank:5},
-    f2:{name:"G. Robertson",full:"Gillian Robertson",country:"CAN",record:"16-8",age:30,odds:-143,
-        slpm:2.86,sapm:2.86,sacc:48,sdef:56,td:2.74,tdacc:40,tddef:41,sub:0.9,
-        ko:2,dec:7,s:7,reach:63,layoff:315,
-        recentForm:[{r:"W",opp:"M.Rodriguez",oppRank:9,method:"KO"},{r:"W",opp:"Pinheiro",oppRank:99,method:"DEC"},{r:"W",opp:"Waterson",oppRank:99,method:"DEC"},{r:"W",opp:"Viana",oppRank:99,method:"KO"},{r:"L",opp:"Ricci",oppRank:99,method:"DEC"}],
-        lossTypes:{ko:1,sub:2,dec:5},rank:8}},
-  { id:14, card:"MAIN EVENT", time:"21:30", rounds:5, wc:"Featherweight", lbs:"145 lbs", ou:3.5, isMain:true,
-    f1:{name:"J. Emmett",full:"Josh Emmett",country:"USA",record:"19-6",age:41,odds:185,
-        slpm:3.72,sapm:4.43,sacc:35,sdef:60,td:1.08,tdacc:37,tddef:43,sub:0.1,
-        ko:7,dec:10,s:2,reach:70,layoff:161,
-        recentForm:[{r:"L",opp:"Zalal",oppRank:13,method:"SUB"},{r:"L",opp:"Murphy",oppRank:3,method:"DEC"},{r:"W",opp:"Mitchell",oppRank:8,method:"KO"},{r:"L",opp:"Topuria",oppRank:1,method:"DEC"},{r:"L",opp:"Y.Rodriguez",oppRank:3,method:"SUB"}],
-        lossTypes:{ko:0,sub:2,dec:4},rank:11},
-    f2:{name:"K. Vallejos",full:"Kevin Vallejos",country:"ARG",record:"17-1",age:24,odds:-240,
-        slpm:5.78,sapm:4.71,sacc:46,sdef:56,td:0.71,tdacc:28,tddef:83,sub:0.0,
-        ko:12,dec:3,s:2,reach:68,layoff:91,
-        recentForm:[{r:"W",opp:"Chikadze",oppRank:99,method:"KO"},{r:"W",opp:"D.Silva",oppRank:99,method:"DEC"},{r:"W",opp:"Choi",oppRank:99,method:"KO"},{r:"W",opp:"Teague",oppRank:99,method:"KO"},{r:"L",opp:"J.Silva",oppRank:99,method:"DEC"}],
-        lossTypes:{ko:0,sub:0,dec:1},rank:14}},
-];
-function modelV3(f1,f2,rounds){
-  const strNet1=(f1.slpm*f1.sacc/100)-(f1.sapm*(1-f1.sdef/100));
-  const strNet2=(f2.slpm*f2.sacc/100)-(f2.sapm*(1-f2.sdef/100));
-  const grp1=f1.td*(f1.tdacc/100)*2+f1.tddef*0.015+f1.sub*0.5;
-  const grp2=f2.td*(f2.tdacc/100)*2+f2.tddef*0.015+f2.sub*0.5;
-  const formScore=(form)=>{
-    const w=[5,4,3,2,1];
-    return form.reduce((acc,f,i)=>{
-      const rb=f.oppRank<=5?1.5:f.oppRank<=10?1.3:f.oppRank<=15?1.15:1.0;
-      return acc+(f.r==="W"?w[i]*rb:-w[i]*0.6);
-    },0)/15;
-  };
-  const form1=formScore(f1.recentForm);
-  const form2=formScore(f2.recentForm);
-  const agePen=(a)=>a>31?Math.min(0.25,(a-31)*0.028):0;
-  const ap1=agePen(f1.age),ap2=agePen(f2.age);
-  const layPen=(d)=>d>120?Math.min(0.15,(d-120)/900):0;
-  const lp1=layPen(f1.layoff),lp2=layPen(f2.layoff);
-  const ra1=Math.max(0,f1.reach-f2.reach)*0.004;
-  const ra2=Math.max(0,f2.reach-f1.reach)*0.004;
-  const sa1=(strNet1>strNet2&&f2.sdef<55?0.05:0)+(grp1>grp2&&f2.tddef<60?0.05:0);
-  const sa2=(strNet2>strNet1&&f1.sdef<55?0.05:0)+(grp2>grp1&&f1.tddef<60?0.05:0);
-  const tl1=f1.lossTypes.ko+f1.lossTypes.sub+f1.lossTypes.dec||1;
-  const tl2=f2.lossTypes.ko+f2.lossTypes.sub+f2.lossTypes.dec||1;
-  const cv1=(f1.lossTypes.ko/tl1)*0.08,cv2=(f2.lossTypes.ko/tl2)*0.08;
-  const S1=strNet1*0.30+grp1*0.20+form1*0.25+ra1*0.05+sa1*0.10-ap1*0.05-lp1*0.03-cv1*0.02;
-  const S2=strNet2*0.30+grp2*0.20+form2*0.25+ra2*0.05+sa2*0.10-ap2*0.05-lp2*0.03-cv2*0.02;
-  const tot=Math.abs(S1)+Math.abs(S2)||1;
-  const pct1=Math.round(Math.min(93,Math.max(7,50+((S1-S2)/tot)*42)));
-  const pct2=100-pct1;
-  const winner=pct1>=pct2?"f1":"f2";
-  const winF=winner==="f1"?f1:f2,loseF=winner==="f1"?f2:f1;
-  const wT=winF.ko+winF.s+winF.dec||1;
-  const koP=(winF.ko/wT)*100,subP=(winF.s/wT)*100,decP=(winF.dec/wT)*100;
-  const isStrAdv=winF.slpm>loseF.slpm*1.15||winF.sacc>loseF.sdef*0.8;
-  const isGrpAdv=winF.td>1.5&&winF.tdacc>35&&loseF.tddef<65;
-  const loseKOV=loseF.lossTypes.ko>=3;
-  let method,mConf;
-  if(isStrAdv&&(koP>45||loseKOV)){method="KO/TKO";mConf=Math.round(Math.min(85,koP+(loseKOV?12:0)));}
-  else if(isGrpAdv&&subP>20){method="Soumission";mConf=Math.round(Math.min(80,subP+18));}
-  else if(koP>40){method="KO/TKO";mConf=Math.round(Math.min(75,koP*0.85));}
-  else{method="Decision";mConf=Math.round(Math.min(82,decP));}
-  mConf=Math.max(32,mConf);
-  const bd={"Striking net":[+strNet1.toFixed(2),+strNet2.toFixed(2)],"Grappling":[+grp1.toFixed(2),+grp2.toFixed(2)],"Forme":[+form1.toFixed(2),+form2.toFixed(2)],"Style":[+sa1.toFixed(2),+sa2.toFixed(2)],"Age pen":[+(ap1*-10).toFixed(1),+(ap2*-10).toFixed(1)],"Layoff pen":[+(lp1*-10).toFixed(1),+(lp2*-10).toFixed(1)],"Reach":[+ra1.toFixed(2),+ra2.toFixed(2)]};
-  return{winner,pct1,pct2,method,mConf,bd,ap1,ap2,lp1,lp2,strNet1,strNet2};
+// FILTRE STATS ABERRANTES — si < 3 combats UFC, cap les stats
+function capStats(f) {
+  if (f.ucfFights < 3) {
+    return {
+      ...f,
+      slpm: Math.min(f.slpm, 6.0),
+      sapm: Math.min(f.sapm, 6.0),
+      td: Math.min(f.td, 5.0),
+    };
+  }
+  return f;
 }
 
-function predictOU(fight){
-  const{f1,f2,ou,rounds,wc}=fight;
-  const divFR=DIV_FINISH_RATE[wc]||0.50;
-  const f1FP=((f1.ko+f1.s)/(f1.ko+f1.s+f1.dec||1));
-  const f2FP=((f2.ko+f2.s)/(f2.ko+f2.s+f2.dec||1));
-  const fighterFinish=(f1FP+f2FP)/2;
-  const combinedFinish=(fighterFinish*0.60)+(divFR*0.40);
-  const maxT=rounds*5;
-  const estTime=maxT*(1-combinedFinish*0.50);
-  const estRound=Math.min(rounds,Math.max(1,estTime/5));
-  const ouMins=ou*5;
-  const diff=estTime-ouMins;
-  const over=Math.round(Math.min(90,Math.max(10,50+Math.tanh(diff/2.5)*40)));
-  const under=100-over;
-  const signal=over>=58?"OVER":under>=58?"UNDER":"PUSH";
+const fights = [
+  { id:1, card:"PRELIMS", time:"13:00", rounds:3, wc:"Bantamweight W", lbs:"135 lbs", ou:2.5,
+    f1:{name:"M. Mullins",full:"Melissa Mullins",country:"USA",record:"8-2",age:28,odds:-150,ucfFights:3,
+        slpm:3.2,sapm:2.8,sacc:45,sdef:58,td:1.2,tdacc:40,tddef:65,sub:0.8,
+        ko:2,dec:4,s:2,reach:65,layoff:180,
+        recentForm:[{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"L",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"SUB"},{r:"W",opp:"opp",oppRank:99,method:"DEC"}],
+        lossTypes:{ko:1,sub:0,dec:1},rank:99},
+    f2:{name:"L. Carolina",full:"Luana Carolina",country:"BRA",record:"9-5",age:30,odds:125,ucfFights:6,
+        slpm:3.8,sapm:3.4,sacc:48,sdef:55,td:1.8,tdacc:42,tddef:60,sub:1.2,
+        ko:2,dec:5,s:2,reach:64,layoff:210,
+        recentForm:[{r:"L",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"SUB"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"L",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"}],
+        lossTypes:{ko:2,sub:1,dec:2},rank:99}},
+  { id:2, card:"PRELIMS", time:"13:20", rounds:3, wc:"Strawweight W", lbs:"115 lbs", ou:2.5,
+    f1:{name:"S. Dyer",full:"Shanelle Dyer",country:"USA",record:"7-2",age:27,odds:-130,ucfFights:3,
+        slpm:3.5,sapm:3.0,sacc:46,sdef:57,td:1.5,tdacc:44,tddef:68,sub:0.6,
+        ko:2,dec:4,s:1,reach:64,layoff:150,
+        recentForm:[{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"L",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"DEC"}],
+        lossTypes:{ko:0,sub:1,dec:1},rank:99},
+    f2:{name:"R. Oliveira",full:"Ravena Oliveira",country:"BRA",record:"8-3",age:26,odds:110,ucfFights:2,
+        slpm:3.2,sapm:3.5,sacc:44,sdef:54,td:1.0,tdacc:38,tddef:62,sub:1.0,
+        ko:2,dec:4,s:2,reach:63,layoff:160,
+        recentForm:[{r:"W",opp:"opp",oppRank:99,method:"SUB"},{r:"L",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"L",opp:"opp",oppRank:99,method:"DEC"}],
+        lossTypes:{ko:1,sub:1,dec:1},rank:99}},
+  { id:3, card:"PRELIMS", time:"13:40", rounds:3, wc:"Lightweight", lbs:"155 lbs", ou:2.5,
+    f1:{name:"S. Rock",full:"Shem Rock",country:"CAN",record:"16-6",age:33,odds:-160,ucfFights:8,
+        slpm:3.8,sapm:3.2,sacc:46,sdef:57,td:2.5,tdacc:48,tddef:72,sub:0.8,
+        ko:4,dec:9,s:3,reach:73,layoff:200,
+        recentForm:[{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"L",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"SUB"}],
+        lossTypes:{ko:3,sub:1,dec:2},rank:99},
+    f2:{name:"A. Al-Selwady",full:"Abdul-Kareem Al-Selwady",country:"USA",record:"9-2",age:27,odds:135,ucfFights:3,
+        slpm:4.2,sapm:3.8,sacc:50,sdef:55,td:1.8,tdacc:45,tddef:65,sub:0.5,
+        ko:4,dec:4,s:1,reach:72,layoff:140,
+        recentForm:[{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"L",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"}],
+        lossTypes:{ko:1,sub:0,dec:1},rank:99}},
+  { id:4, card:"PRELIMS", time:"14:00", rounds:3, wc:"Heavyweight", lbs:"265 lbs", ou:1.5,
+    f1:{name:"M. Pinto",full:"Mario Pinto",country:"PRT",record:"11-0",age:27,odds:-200,ucfFights:3,
+        slpm:3.39,sapm:2.42,sacc:78,sdef:53,td:2.72,tdacc:60,tddef:100,sub:1.8,
+        ko:5,dec:3,s:3,reach:79,layoff:161,
+        recentForm:[{r:"W",opp:"Diniz",oppRank:99,method:"KO"},{r:"W",opp:"Lane",oppRank:99,method:"KO"},{r:"W",opp:"Camacho",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"SUB"},{r:"W",opp:"opp",oppRank:99,method:"KO"}],
+        lossTypes:{ko:0,sub:0,dec:0},rank:99},
+    f2:{name:"F. Franco",full:"Felipe Franco",country:"BRA",record:"8-1",age:28,odds:165,ucfFights:1,
+        slpm:4.0,sapm:3.2,sacc:50,sdef:55,td:1.0,tdacc:40,tddef:70,sub:0.5,
+        ko:5,dec:2,s:1,reach:76,layoff:120,
+        recentForm:[{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"L",opp:"opp",oppRank:99,method:"DEC"}],
+        lossTypes:{ko:0,sub:0,dec:1},rank:99}},
+  { id:5, card:"PRELIMS", time:"14:20", rounds:3, wc:"Middleweight", lbs:"185 lbs", ou:2.5,
+    f1:{name:"M. Kondratavicius",full:"Mantas Kondratavicius",country:"LTU",record:"10-2",age:29,odds:-140,ucfFights:3,
+        slpm:3.5,sapm:3.0,sacc:47,sdef:58,td:2.0,tdacc:45,tddef:68,sub:0.6,
+        ko:4,dec:5,s:1,reach:74,layoff:170,
+        recentForm:[{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"L",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"}],
+        lossTypes:{ko:1,sub:0,dec:1},rank:99},
+    f2:{name:"A. Trocoli",full:"Antonio Trocoli",country:"BRA",record:"12-3",age:32,odds:118,ucfFights:4,
+        slpm:3.2,sapm:3.5,sacc:44,sdef:55,td:1.5,tdacc:40,tddef:62,sub:1.0,
+        ko:3,dec:7,s:2,reach:73,layoff:180,
+        recentForm:[{r:"L",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"SUB"},{r:"L",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"}],
+        lossTypes:{ko:2,sub:0,dec:1},rank:99}},
+  { id:6, card:"PRELIMS", time:"14:40", rounds:3, wc:"Heavyweight", lbs:"265 lbs", ou:1.5,
+    f1:{name:"L. Sutherland",full:"Louie Sutherland",country:"GBR",record:"13-5",age:31,odds:-125,ucfFights:5,
+        slpm:3.8,sapm:3.4,sacc:47,sdef:52,td:1.2,tdacc:38,tddef:65,sub:0.4,
+        ko:6,dec:5,s:2,reach:76,layoff:200,
+        recentForm:[{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"L",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"L",opp:"opp",oppRank:99,method:"KO"}],
+        lossTypes:{ko:3,sub:0,dec:2},rank:99},
+    f2:{name:"B. Pericic",full:"Brando Pericic",country:"HRV",record:"12-3",age:29,odds:105,ucfFights:4,
+        slpm:3.5,sapm:3.8,sacc:45,sdef:50,td:1.0,tdacc:35,tddef:60,sub:0.5,
+        ko:5,dec:5,s:2,reach:75,layoff:160,
+        recentForm:[{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"L",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"L",opp:"opp",oppRank:99,method:"DEC"}],
+        lossTypes:{ko:2,sub:0,dec:1},rank:99}},
+  { id:7, card:"PRELIMS", time:"15:00", rounds:3, wc:"Lightweight", lbs:"155 lbs", ou:2.5,
+    f1:{name:"M. Jones",full:"Mason Jones",country:"GBR",record:"17-2",age:30,odds:-180,ucfFights:7,
+        slpm:5.71,sapm:4.47,sacc:41,sdef:50,td:4.17,tdacc:55,tddef:81,sub:0.2,
+        ko:5,dec:9,s:3,reach:74,layoff:196,
+        recentForm:[{r:"W",opp:"Oki",oppRank:99,method:"KO"},{r:"W",opp:"Stephens",oppRank:99,method:"DEC"},{r:"L",opp:"Klein",oppRank:99,method:"DEC"},{r:"W",opp:"Onama",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"DEC"}],
+        lossTypes:{ko:0,sub:1,dec:1},rank:99},
+    f2:{name:"A. Sola",full:"Axel Sola",country:"FRA",record:"11-0-1",age:27,odds:150,ucfFights:1,
+        slpm:3.74,sapm:2.74,sacc:42,sdef:75,td:1.25,tdacc:25,tddef:0,sub:0.0,
+        ko:4,dec:6,s:1,reach:74,layoff:196,
+        recentForm:[{r:"W",opp:"McKee",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"D",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"}],
+        lossTypes:{ko:0,sub:0,dec:0},rank:99}},
+];
+  { id:8, card:"MAIN CARD", time:"16:00", rounds:3, wc:"Featherweight", lbs:"145 lbs", ou:2.5,
+    f1:{name:"N. Wood",full:"Nathaniel Wood",country:"GBR",record:"22-6",age:32,odds:-175,ucfFights:12,
+        slpm:5.74,sapm:4.32,sacc:52,sdef:54,td:1.46,tdacc:50,tddef:73,sub:0.5,
+        ko:7,dec:12,s:3,reach:69,layoff:147,
+        recentForm:[{r:"W",opp:"Delgado",oppRank:99,method:"DEC"},{r:"W",opp:"Charriere",oppRank:99,method:"DEC"},{r:"W",opp:"Pineda",oppRank:99,method:"DEC"},{r:"L",opp:"Naimov",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"SUB"}],
+        lossTypes:{ko:1,sub:2,dec:3},rank:99},
+    f2:{name:"L. Keita",full:"Losene Keita",country:"GUI",record:"16-1",age:27,odds:145,ucfFights:1,
+        slpm:4.0,sapm:3.0,sacc:48,sdef:58,td:2.0,tdacc:45,tddef:70,sub:1.0,
+        ko:6,dec:7,s:3,reach:72,layoff:200,
+        recentForm:[{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"L",opp:"opp",oppRank:99,method:"DEC"}],
+        lossTypes:{ko:0,sub:0,dec:1},rank:99}},
+  { id:9, card:"MAIN CARD", time:"16:20", rounds:3, wc:"Featherweight", lbs:"145 lbs", ou:2.5,
+    f1:{name:"K. Campbell",full:"Kurtis Campbell",country:"GBR",record:"8-0",age:22,odds:-165,ucfFights:1,
+        slpm:5.25,sapm:1.50,sacc:77,sdef:60,td:5.0,tdacc:40,tddef:100,sub:0.0,
+        ko:3,dec:4,s:1,reach:72,layoff:172,
+        recentForm:[{r:"W",opp:"Seck",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"DEC"}],
+        lossTypes:{ko:0,sub:0,dec:0},rank:99},
+    f2:{name:"D. Silva",full:"Danny Silva",country:"ESP",record:"10-2",age:28,odds:138,ucfFights:4,
+        slpm:6.67,sapm:7.47,sacc:55,sdef:61,td:2.00,tdacc:33,tddef:81,sub:0.2,
+        ko:4,dec:5,s:1,reach:70,layoff:231,
+        recentForm:[{r:"L",opp:"Vallejos",oppRank:14,method:"DEC"},{r:"W",opp:"L.Almeida",oppRank:99,method:"DEC"},{r:"W",opp:"Culibao",oppRank:99,method:"DEC"},{r:"W",opp:"Pacheco",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"}],
+        lossTypes:{ko:0,sub:0,dec:2},rank:99}},
+  { id:10, card:"MAIN CARD", time:"16:40", rounds:3, wc:"Light Heavyweight", lbs:"205 lbs", ou:1.5,
+    f1:{name:"I. Baraniewski",full:"Iwo Baraniewski",country:"POL",record:"7-0",age:26,odds:-145,ucfFights:2,
+        slpm:5.0,sapm:5.0,sacc:55,sdef:50,td:0.0,tdacc:0,tddef:100,sub:0.0,
+        ko:5,dec:2,s:0,reach:73,layoff:105,
+        recentForm:[{r:"W",opp:"Aslan",oppRank:99,method:"KO"},{r:"W",opp:"Aly",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"KO"}],
+        lossTypes:{ko:0,sub:0,dec:0},rank:99},
+    f2:{name:"A. Lane",full:"Austen Lane",country:"USA",record:"13-7",age:37,odds:120,ucfFights:6,
+        slpm:2.74,sapm:2.23,sacc:50,sdef:40,td:1.52,tdacc:28,tddef:33,sub:0.0,
+        ko:4,dec:7,s:2,reach:80,layoff:252,
+        recentForm:[{r:"L",opp:"Petrino",oppRank:99,method:"SUB"},{r:"L",opp:"M.Pinto",oppRank:99,method:"KO"},{r:"W",opp:"Despaigne",oppRank:99,method:"DEC"},{r:"L",opp:"Diniz",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"KO"}],
+        lossTypes:{ko:4,sub:1,dec:2},rank:99}},
+  { id:11, card:"MAIN CARD", time:"17:00", rounds:3, wc:"Middleweight", lbs:"185 lbs", ou:2.5,
+    f1:{name:"R. Dolidze",full:"Roman Dolidze",country:"GEO",record:"15-4",age:37,odds:120,ucfFights:10,
+        slpm:3.41,sapm:3.72,sacc:41,sdef:48,td:0.99,tdacc:39,tddef:26,sub:0.8,
+        ko:5,dec:8,s:2,reach:76,layoff:224,
+        recentForm:[{r:"L",opp:"Hernandez",oppRank:99,method:"SUB"},{r:"W",opp:"Vettori",oppRank:99,method:"DEC"},{r:"W",opp:"Holland",oppRank:99,method:"KO"},{r:"W",opp:"A.Smith",oppRank:99,method:"DEC"},{r:"L",opp:"Chimaev",oppRank:1,method:"SUB"}],
+        lossTypes:{ko:0,sub:3,dec:1},rank:99},
+    f2:{name:"C. Duncan",full:"Christian Leroy Duncan",country:"GBR",record:"13-2",age:30,odds:-145,ucfFights:5,
+        slpm:4.60,sapm:2.97,sacc:58,sdef:51,td:0.40,tdacc:20,tddef:69,sub:0.0,
+        ko:5,dec:7,s:1,reach:79,layoff:133,
+        recentForm:[{r:"W",opp:"M.Tulio",oppRank:99,method:"KO"},{r:"W",opp:"Anders",oppRank:99,method:"KO"},{r:"W",opp:"Pulyaev",oppRank:99,method:"DEC"},{r:"L",opp:"Rodrigues",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"}],
+        lossTypes:{ko:0,sub:0,dec:2},rank:99}},
+  { id:12, card:"MAIN CARD", time:"17:20", rounds:3, wc:"Featherweight", lbs:"145 lbs", ou:2.5,
+    f1:{name:"L. Riley",full:"Luke Riley",country:"GBR",record:"12-0",age:25,odds:-130,ucfFights:1,
+        slpm:2.55,sapm:1.27,sacc:60,sdef:46,td:0.0,tdacc:0,tddef:42,sub:0.0,
+        ko:5,dec:6,s:1,reach:69,layoff:119,
+        recentForm:[{r:"W",opp:"Grad",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"DEC"}],
+        lossTypes:{ko:0,sub:0,dec:0},rank:99},
+    f2:{name:"M. Aswell Jr",full:"Michael Aswell Jr",country:"USA",record:"11-3",age:24,odds:108,ucfFights:3,
+        slpm:5.0,sapm:5.0,sacc:45,sdef:54,td:0.0,tdacc:0,tddef:57,sub:0.0,
+        ko:6,dec:4,s:1,reach:69,layoff:161,
+        recentForm:[{r:"W",opp:"L.Almeida",oppRank:99,method:"KO"},{r:"L",opp:"Oki",oppRank:99,method:"DEC"},{r:"L",opp:"Grad",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"KO"}],
+        lossTypes:{ko:0,sub:0,dec:3},rank:99}},
+  { id:13, card:"MAIN CARD", time:"17:40", rounds:3, wc:"Welterweight", lbs:"170 lbs", ou:2.5,
+    f1:{name:"M. Page",full:"Michael Page",country:"GBR",record:"24-3",age:38,odds:-160,ucfFights:5,
+        slpm:2.39,sapm:1.68,sacc:60,sdef:57,td:0.23,tdacc:16,tddef:66,sub:0.0,
+        ko:13,dec:9,s:2,reach:79,layoff:217,
+        recentForm:[{r:"W",opp:"Cannonier",oppRank:99,method:"DEC"},{r:"W",opp:"Magomedov",oppRank:99,method:"DEC"},{r:"L",opp:"I.Garry",oppRank:5,method:"DEC"},{r:"W",opp:"Holland",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"}],
+        lossTypes:{ko:0,sub:0,dec:3},rank:99},
+    f2:{name:"S. Patterson",full:"Sam Patterson",country:"GBR",record:"14-2-1",age:29,odds:133,ucfFights:5,
+        slpm:3.89,sapm:3.93,sacc:43,sdef:49,td:1.39,tdacc:100,tddef:33,sub:2.8,
+        ko:4,dec:7,s:3,reach:78,layoff:196,
+        recentForm:[{r:"W",opp:"Waters",oppRank:99,method:"KO"},{r:"W",opp:"Barlow",oppRank:99,method:"KO"},{r:"W",opp:"Crosbie",oppRank:99,method:"SUB"},{r:"W",opp:"Lainesse",oppRank:99,method:"SUB"},{r:"L",opp:"opp",oppRank:99,method:"DEC"}],
+        lossTypes:{ko:0,sub:0,dec:2},rank:99}},
+  { id:14, card:"MAIN EVENT", time:"17:40", rounds:5, wc:"Featherweight", lbs:"145 lbs", ou:3.5, isMain:true,
+    f1:{name:"M. Evloev",full:"Movsar Evloev",country:"RUS",record:"19-0",age:32,odds:-140,ucfFights:10,
+        slpm:3.99,sapm:2.66,sacc:48,sdef:60,td:4.67,tdacc:48,tddef:61,sub:0.2,
+        ko:4,dec:13,s:2,reach:72,layoff:469,
+        recentForm:[{r:"W",opp:"Sterling",oppRank:99,method:"DEC"},{r:"W",opp:"A.Allen",oppRank:99,method:"DEC"},{r:"W",opp:"D.Lopes",oppRank:99,method:"DEC"},{r:"W",opp:"D.Ige",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"DEC"}],
+        lossTypes:{ko:0,sub:0,dec:0},rank:1},
+    f2:{name:"L. Murphy",full:"Lerone Murphy",country:"GBR",record:"17-0-1",age:34,odds:118,ucfFights:8,
+        slpm:4.48,sapm:2.51,sacc:53,sdef:61,td:1.41,tdacc:54,tddef:51,sub:0.5,
+        ko:6,dec:9,s:2,reach:73,layoff:217,
+        recentForm:[{r:"W",opp:"A.Pico",oppRank:99,method:"KO"},{r:"W",opp:"Emmett",oppRank:11,method:"DEC"},{r:"W",opp:"D.Ige",oppRank:99,method:"DEC"},{r:"W",opp:"Barboza",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"DEC"}],
+        lossTypes:{ko:0,sub:0,dec:0},rank:4}},
+];
+// FILTRE STATS ABERRANTES — cap les stats si peu de combats UFC
+function getStats(f) {
+  const maxSlpm = f.ucfFights < 3 ? 5.5 : 99;
+  const maxSapm = f.ucfFights < 3 ? 5.5 : 99;
+  const maxTd = f.ucfFights < 3 ? 4.5 : 99;
+  return {
+    ...f,
+    slpm: Math.min(f.slpm, maxSlpm),
+    sapm: Math.min(f.sapm, maxSapm),
+    td: Math.min(f.td, maxTd),
+  };
+}
+
+function modelV5(f1raw, f2raw, rounds) {
+  const f1 = getStats(f1raw);
+  const f2 = getStats(f2raw);
+
+  // 1. STRIKING NET
+  const strNet1 = (f1.slpm * f1.sacc/100) - (f1.sapm * (1 - f1.sdef/100));
+  const strNet2 = (f2.slpm * f2.sacc/100) - (f2.sapm * (1 - f2.sdef/100));
+
+  // 2. GRAPPLING
+  const grp1 = f1.td*(f1.tdacc/100)*2 + f1.tddef*0.015 + f1.sub*0.5;
+  const grp2 = f2.td*(f2.tdacc/100)*2 + f2.tddef*0.015 + f2.sub*0.5;
+
+  // 3. FORME RECENTE PONDEREE
+  const formScore = (form) => {
+    const w = [5,4,3,2,1];
+    return form.reduce((acc,f,i) => {
+      if(f.r==="D") return acc;
+      const rb = f.oppRank<=5?1.5:f.oppRank<=10?1.3:f.oppRank<=15?1.15:1.0;
+      return acc + (f.r==="W" ? w[i]*rb : -w[i]*0.6);
+    },0)/15;
+  };
+  const form1 = formScore(f1.recentForm);
+  const form2 = formScore(f2.recentForm);
+
+  // 4. PENALITE AGE
+  const agePen = (a) => a>31 ? Math.min(0.25,(a-31)*0.028) : 0;
+  const ap1=agePen(f1.age), ap2=agePen(f2.age);
+
+  // 5. PENALITE LAYOFF
+  const layPen = (d) => d>120 ? Math.min(0.15,(d-120)/900) : 0;
+  const lp1=layPen(f1.layoff), lp2=layPen(f2.layoff);
+
+  // 6. REACH
+  const ra1=Math.max(0,f1.reach-f2.reach)*0.004;
+  const ra2=Math.max(0,f2.reach-f1.reach)*0.004;
+
+  // 7. STYLE MATCHUP
+  const sa1=(strNet1>strNet2&&f2.sdef<55?0.05:0)+(grp1>grp2&&f2.tddef<60?0.05:0);
+  const sa2=(strNet2>strNet1&&f1.sdef<55?0.05:0)+(grp2>grp1&&f1.tddef<60?0.05:0);
+
+  // 8. VULNERABILITE CHIN
+  const tl1=f1.lossTypes.ko+f1.lossTypes.sub+f1.lossTypes.dec||1;
+  const tl2=f2.lossTypes.ko+f2.lossTypes.sub+f2.lossTypes.dec||1;
+  const cv1=(f1.lossTypes.ko/tl1)*0.08, cv2=(f2.lossTypes.ko/tl2)*0.08;
+
+  // 9. PENALITE INEXPERIENCE UFC
+  const expPen1 = f1.ucfFights < 3 ? 0.05 : 0;
+  const expPen2 = f2.ucfFights < 3 ? 0.05 : 0;
+
+  // 10. COMBINE
+  const S1 = strNet1*0.28 + grp1*0.20 + form1*0.27 + ra1*0.05 + sa1*0.08 - ap1*0.05 - lp1*0.03 - cv1*0.02 - expPen1*0.02;
+  const S2 = strNet2*0.28 + grp2*0.20 + form2*0.27 + ra2*0.05 + sa2*0.08 - ap2*0.05 - lp2*0.03 - cv2*0.02 - expPen2*0.02;
+
+  const tot = Math.abs(S1)+Math.abs(S2)||1;
+  const pct1 = Math.round(Math.min(93,Math.max(7,50+((S1-S2)/tot)*42)));
+  const pct2 = 100-pct1;
+  const winner = pct1>=pct2?"f1":"f2";
+  const winF = winner==="f1"?f1:f2, loseF=winner==="f1"?f2:f1;
+
+  // 11. METHODE AMELIOREE
+  const wT = winF.ko+winF.s+winF.dec||1;
+  const koP = (winF.ko/wT)*100;
+  const subP = (winF.s/wT)*100;
+  const decP = (winF.dec/wT)*100;
+  // Facteurs KO: striker fort + adversaire chin vulnérable + SApM élevé adversaire
+  const loseKOV = loseF.lossTypes.ko>=3;
+  const loseHighSapm = loseF.sapm > 4.5;
+  const isStrAdv = winF.slpm > loseF.slpm*1.2 || winF.sacc > loseF.sdef*0.85;
+  const isGrpAdv = winF.td>1.5 && winF.tdacc>35 && loseF.tddef<60;
+  // Facteur DECISION: si les deux ont beaucoup de décisions dans palmarès
+  const bothDecision = (decP > 55) && ((loseF.dec/(loseF.ko+loseF.s+loseF.dec||1))*100 > 40);
+
+  let method, mConf;
+  if(bothDecision && !loseKOV) {
+    method="Decision"; mConf=Math.round(Math.min(82,decP+10));
+  } else if(isStrAdv&&(koP>45||loseKOV||loseHighSapm)) {
+    method="KO/TKO"; mConf=Math.round(Math.min(82,koP+(loseKOV?10:0)+(loseHighSapm?5:0)));
+  } else if(isGrpAdv&&subP>20) {
+    method="Soumission"; mConf=Math.round(Math.min(78,subP+15));
+  } else if(koP>40) {
+    method="KO/TKO"; mConf=Math.round(Math.min(72,koP*0.85));
+  } else {
+    method="Decision"; mConf=Math.round(Math.min(80,decP));
+  }
+  mConf=Math.max(32,mConf);
+
+  const bd={
+    "Striking net":[+strNet1.toFixed(2),+strNet2.toFixed(2)],
+    "Grappling":[+grp1.toFixed(2),+grp2.toFixed(2)],
+    "Forme":[+form1.toFixed(2),+form2.toFixed(2)],
+    "Style":[+sa1.toFixed(2),+sa2.toFixed(2)],
+    "Age pen":[+(ap1*-10).toFixed(1),+(ap2*-10).toFixed(1)],
+    "Layoff pen":[+(lp1*-10).toFixed(1),+(lp2*-10).toFixed(1)],
+    "Reach":[+ra1.toFixed(2),+ra2.toFixed(2)],
+  };
+
+  return{winner,pct1,pct2,method,mConf,bd,ap1,ap2,lp1,lp2,strNet1:+strNet1.toFixed(1),strNet2:+strNet2.toFixed(1)};
+}
+
+// O/U V5 — recalibre pour moins de UNDER
+function predictOU(fight) {
+  const{f1:f1raw,f2:f2raw,ou,rounds,wc}=fight;
+  const f1=getStats(f1raw), f2=getStats(f2raw);
+  const divFR = DIV_FINISH_RATE[wc]||0.50;
+  const divAvgT = DIV_AVG_TIME[wc]||11.0;
+  const f1FP = ((f1.ko+f1.s)/(f1.ko+f1.s+f1.dec||1));
+  const f2FP = ((f2.ko+f2.s)/(f2.ko+f2.s+f2.dec||1));
+  const fighterFinish = (f1FP+f2FP)/2;
+  // V5: augmente poids du temps moyen division (plus de décisions en réalité)
+  const combinedFinish = (fighterFinish*0.50)+(divFR*0.50);
+  const maxT = rounds*5;
+  // Base sur temps moyen division, ajusté par finish rate
+  const estTime = divAvgT * rounds/3 * (1 - combinedFinish*0.35);
+  const estRound = Math.min(rounds,Math.max(1,estTime/5));
+  const ouMins = ou*5;
+  const diff = estTime-ouMins;
+  const over = Math.round(Math.min(88,Math.max(12,50+Math.tanh(diff/2.8)*38)));
+  const under = 100-over;
+  const signal = over>=58?"OVER":under>=58?"UNDER":"PUSH";
   return{over,under,signal,estRound,estTime};
 }
 
@@ -194,7 +326,7 @@ function FormRow({form}){
   return(
     <div style={{display:"flex",gap:2,marginTop:3}}>
       {form.map((f,i)=>(
-        <div key={i} title={`${f.r} vs ${f.opp}`} style={{width:9,height:9,borderRadius:"50%",background:f.r==="W"?"#27ae60":"#e74c3c",opacity:1-i*0.12,border:f.oppRank<=15?"1.5px solid #333":"none"}}/>
+        <div key={i} title={`${f.r} vs ${f.opp}`} style={{width:9,height:9,borderRadius:"50%",background:f.r==="W"?"#27ae60":f.r==="D"?"#f0a500":"#e74c3c",opacity:1-i*0.12,border:f.oppRank<=15?"1.5px solid #333":"none"}}/>
       ))}
     </div>
   );
@@ -232,7 +364,7 @@ function MethodBadge({method}){
 function BdTable({bd}){
   return(
     <div style={{marginTop:10}}>
-      <div style={{fontSize:8,fontFamily:"monospace",color:"#aaa",letterSpacing:"0.12em",marginBottom:6}}>FACTEURS MODELE v3</div>
+      <div style={{fontSize:8,fontFamily:"monospace",color:"#aaa",letterSpacing:"0.12em",marginBottom:6}}>FACTEURS MODELE v5</div>
       {Object.entries(bd).map(([k,[v1,v2]])=>{
         const b1=v1>=v2;
         const max=Math.max(Math.abs(v1),Math.abs(v2),0.01);
@@ -258,227 +390,296 @@ function BdTable({bd}){
     </div>
   );
 }
-function OUSection({fight}){
-  const{over,under,signal,estRound,estTime}=predictOU(fight);
-  const{ou,rounds}=fight;
-  const ss={OVER:["#e9f7f0","#27ae60","#b2dfce","OVER PREVU"],UNDER:["#ffeaea","#e74c3c","#fcc","UNDER PREVU"],PUSH:["#f5f5f5","#888","#ddd","TROP SERRE"]}[signal];
-  const est=Math.min(rounds,Math.max(1,estRound));
+function FightCard({fight}){
+  const[open,setOpen]=useState(false);
+  const{f1,f2,wc,lbs,rounds,ou,card,time,isMain}=fight;
+  const res=modelV5(f1,f2,rounds);
+  const ouRes=predictOU(fight);
+  const wF=res.winner==="f1"?f1:f2;
+  const lF=res.winner==="f1"?f2:f1;
+  const wPct=res.winner==="f1"?res.pct1:res.pct2;
+  const lPct=res.winner==="f1"?res.pct2:res.pct1;
+  const wStr=res.winner==="f1"?res.strNet1:res.strNet2;
+  const lStr=res.winner==="f1"?res.strNet2:res.strNet1;
+  const confColor=wPct>=70?"#27ae60":wPct>=58?"#f0a500":"#e74c3c";
+  const ouColor=ouRes.signal==="OVER"?"#e74c3c":ouRes.signal==="UNDER"?"#2980b9":"#888";
+
   return(
-    <div style={{background:"#f8f9fa",borderRadius:8,padding:"10px 12px",marginTop:6}}>
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8}}>
-        <span style={{fontSize:8,fontFamily:"monospace",color:"#aaa",fontWeight:700}}>O/U {ou} ROUNDS</span>
-        <span style={{fontSize:8,fontFamily:"monospace",color:"#aaa"}}>{rounds}R max · Est:{estTime.toFixed(1)}min</span>
+    <div style={{background:"#fff",borderRadius:10,boxShadow:"0 2px 10px rgba(0,0,0,0.07)",marginBottom:12,border:`1px solid ${isMain?"#f0a500":"#eee"}`,overflow:"hidden"}}>
+      {/* HEADER */}
+      <div style={{background:isMain?"linear-gradient(135deg,#1a1a2e,#16213e)":card==="MAIN CARD"?"#1a1a2e":"#f8f8f8",padding:"8px 14px",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+        <div style={{display:"flex",alignItems:"center",gap:8}}>
+          <span style={{fontSize:8,fontFamily:"monospace",fontWeight:700,color:isMain?"#f0a500":card==="MAIN CARD"?"#aaa":"#888",letterSpacing:"0.12em"}}>{card}</span>
+          {isMain&&<span style={{fontSize:8,background:"#f0a500",color:"#000",borderRadius:3,padding:"1px 6px",fontWeight:700,fontFamily:"monospace"}}>MAIN EVENT</span>}
+        </div>
+        <div style={{display:"flex",alignItems:"center",gap:8}}>
+          <span style={{fontSize:8,fontFamily:"monospace",color:isMain?"#aaa":card==="MAIN CARD"?"#aaa":"#888"}}>{rounds}R · {wc} · {lbs}</span>
+          <span style={{fontSize:8,fontFamily:"monospace",color:isMain?"#aaa":card==="MAIN CARD"?"#aaa":"#888"}}>{time} ET</span>
+        </div>
       </div>
-      <div style={{display:"flex",gap:3,marginBottom:10}}>
-        {Array.from({length:rounds},(_,i)=>i+1).map(r=>{
-          const filled=r<=Math.floor(est);
-          const partial=r===Math.ceil(est)&&!Number.isInteger(est);
-          const col=signal==="OVER"?"#27ae60":signal==="UNDER"?"#e74c3c":"#aaa";
-          return(
-            <div key={r} style={{flex:1,display:"flex",flexDirection:"column",alignItems:"center",gap:2}}>
-              <div style={{height:8,width:"100%",borderRadius:3,background:filled?col:partial?`linear-gradient(90deg,${col} 50%,#e8e8e8 50%)`:"#e8e8e8"}}/>
-              <span style={{fontSize:7,fontFamily:"monospace",color:filled?"#555":"#bbb"}}>R{r}</span>
+
+      {/* FIGHTERS */}
+      <div style={{padding:"12px 14px 10px"}}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:10}}>
+          {/* FIGHTER 1 */}
+          <div style={{flex:1,textAlign:"left"}}>
+            <div style={{display:"flex",alignItems:"center",gap:5,marginBottom:2}}>
+              <span style={{fontSize:8,background:"#eee",borderRadius:3,padding:"1px 5px",fontFamily:"monospace",color:"#555"}}>{f1.country}</span>
+              {f1.rank<=15&&<span style={{fontSize:8,background:"#1a1a2e",color:"#f0a500",borderRadius:3,padding:"1px 5px",fontFamily:"monospace"}}>#{f1.rank}</span>}
+              {f1.ucfFights<3&&<span style={{fontSize:8,background:"#fff4e5",color:"#e67e22",borderRadius:3,padding:"1px 5px",fontFamily:"monospace"}}>NEW</span>}
             </div>
-          );
-        })}
-      </div>
-      <div style={{display:"flex",gap:6,marginBottom:8}}>
-        {[[over,"#27ae60","#e0f5ea",`OVER ${ou}`],[under,"#e74c3c","#ffeaea",`UNDER ${ou}`]].map(([prob,col,bg,lbl])=>(
-          <div key={lbl} style={{flex:1}}>
-            <div style={{display:"flex",justifyContent:"space-between",marginBottom:3}}>
-              <span style={{fontSize:8,fontFamily:"monospace",color:col,fontWeight:700}}>{lbl}</span>
-              <span style={{fontSize:9,fontFamily:"monospace",fontWeight:800,color:col}}>{prob}%</span>
+            <div style={{fontSize:13,fontWeight:700,fontFamily:"monospace",color:"#1a1a2e",lineHeight:1.2}}>{f1.name}</div>
+            <div style={{fontSize:9,color:"#888",fontFamily:"monospace",marginTop:1}}>{f1.record}</div>
+            <FormRow form={f1.recentForm}/>
+            <div style={{fontSize:9,fontFamily:"monospace",color:oddsCol(f1.odds),fontWeight:700,marginTop:3}}>{fmtOdds(f1.odds)}</div>
+          </div>
+
+          {/* CENTER */}
+          <div style={{textAlign:"center",padding:"0 10px",minWidth:80}}>
+            <div style={{fontSize:9,fontFamily:"monospace",color:"#aaa",marginBottom:3}}>VS</div>
+            {/* WIN BAR */}
+            <div style={{height:6,borderRadius:3,overflow:"hidden",display:"flex",marginBottom:4}}>
+              <div style={{width:`${res.pct1}%`,background:"#27ae60"}}/>
+              <div style={{width:`${res.pct2}%`,background:"#e74c3c"}}/>
             </div>
-            <div style={{height:6,background:bg,borderRadius:3,overflow:"hidden"}}>
-              <div style={{width:`${prob}%`,height:"100%",background:col,borderRadius:3}}/>
+            <div style={{fontSize:8,fontFamily:"monospace",color:"#888",marginBottom:6}}>{res.pct1}% — {res.pct2}%</div>
+            {/* WINNER */}
+            <div style={{background:isMain?"#1a1a2e":"#f3f9f5",borderRadius:6,padding:"5px 8px",marginBottom:5}}>
+              <div style={{fontSize:7,fontFamily:"monospace",color:"#aaa",letterSpacing:"0.1em",marginBottom:2}}>PRÉDICTION</div>
+              <div style={{fontSize:11,fontWeight:700,fontFamily:"monospace",color:confColor}}>{wF.name}</div>
+              <div style={{fontSize:8,fontFamily:"monospace",color:"#aaa",marginBottom:3}}>{wPct}% conf.</div>
+              <MethodBadge method={res.method}/>
+              <div style={{fontSize:7,fontFamily:"monospace",color:"#aaa",marginTop:2}}>{res.mConf}% meth.</div>
+            </div>
+            {/* O/U */}
+            <div style={{background:"#f8f8f8",borderRadius:6,padding:"4px 8px"}}>
+              <div style={{fontSize:7,fontFamily:"monospace",color:"#aaa",letterSpacing:"0.1em",marginBottom:2}}>O/U {ou}</div>
+              <div style={{fontSize:11,fontWeight:700,fontFamily:"monospace",color:ouColor}}>{ouRes.signal}</div>
+              <div style={{fontSize:8,fontFamily:"monospace",color:"#aaa"}}>{ouRes.over}% OVER</div>
+              <div style={{fontSize:7,fontFamily:"monospace",color:"#999",marginTop:1}}>~R{ouRes.estRound.toFixed(1)}</div>
             </div>
           </div>
-        ))}
+
+          {/* FIGHTER 2 */}
+          <div style={{flex:1,textAlign:"right"}}>
+            <div style={{display:"flex",alignItems:"center",gap:5,marginBottom:2,justifyContent:"flex-end"}}>
+              {f2.ucfFights<3&&<span style={{fontSize:8,background:"#fff4e5",color:"#e67e22",borderRadius:3,padding:"1px 5px",fontFamily:"monospace"}}>NEW</span>}
+              {f2.rank<=15&&<span style={{fontSize:8,background:"#1a1a2e",color:"#f0a500",borderRadius:3,padding:"1px 5px",fontFamily:"monospace"}}>#{f2.rank}</span>}
+              <span style={{fontSize:8,background:"#eee",borderRadius:3,padding:"1px 5px",fontFamily:"monospace",color:"#555"}}>{f2.country}</span>
+            </div>
+            <div style={{fontSize:13,fontWeight:700,fontFamily:"monospace",color:"#1a1a2e",lineHeight:1.2}}>{f2.name}</div>
+            <div style={{fontSize:9,color:"#888",fontFamily:"monospace",marginTop:1}}>{f2.record}</div>
+            <div style={{display:"flex",justifyContent:"flex-end"}}>
+              <FormRow form={f2.recentForm}/>
+            </div>
+            <div style={{fontSize:9,fontFamily:"monospace",color:oddsCol(f2.odds),fontWeight:700,marginTop:3}}>{fmtOdds(f2.odds)}</div>
+          </div>
+        </div>
+
+        {/* STATS RAPIDES */}
+        <div style={{borderTop:"1px solid #f0f0f0",paddingTop:8}}>
+          <StatBar label="SLpM" v1={getStats(f1).slpm} v2={getStats(f2).slpm}/>
+          <StatBar label="Str. Acc" v1={f1.sacc} v2={f2.sacc} unit="%"/>
+          <StatBar label="Str. Def" v1={f1.sdef} v2={f2.sdef} unit="%"/>
+          <StatBar label="TD Avg" v1={getStats(f1).td} v2={getStats(f2).td}/>
+          <StatBar label="TD Def" v1={f1.tddef} v2={f2.tddef} unit="%"/>
+        </div>
+
+        {/* TOGGLE DETAILS */}
+        <button onClick={()=>setOpen(!open)} style={{width:"100%",marginTop:8,background:"#f8f8f8",border:"1px solid #eee",borderRadius:6,padding:"5px",fontFamily:"monospace",fontSize:9,color:"#888",cursor:"pointer"}}>
+          {open?"▲ MOINS":"▼ DÉTAILS MODÈLE"}
+        </button>
+
+        {open&&(
+          <div style={{marginTop:8}}>
+            <BdTable bd={res.bd}/>
+            <div style={{marginTop:8,padding:8,background:"#f8f8f8",borderRadius:6}}>
+              <div style={{fontSize:8,fontFamily:"monospace",color:"#aaa",marginBottom:4}}>RÉSUMÉ ANALYSE</div>
+              <div style={{fontSize:9,fontFamily:"monospace",color:"#555",lineHeight:1.6}}>
+                {wF.name} domine sur le striking net ({wStr>0?"+":""}{wStr}), avec {wPct}% win prob.
+                {res.ap1>0.05||res.ap2>0.05?" ⚠ Pénalité d'âge appliquée.":""}
+                {res.lp1>0.05||res.lp2>0.05?" ⚠ Layoff significatif détecté.":""}
+                {(f1.ucfFights<3||f2.ucfFights<3)?" 🆕 Stats cappées (nouveau combattant UFC).":""}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-        <span style={{fontSize:9,fontFamily:"monospace",fontWeight:800,background:ss[0],color:ss[1],border:`1px solid ${ss[2]}`,borderRadius:4,padding:"3px 10px"}}>{ss[3]}</span>
-        <span style={{fontSize:8,fontFamily:"monospace",color:"#888"}}>Div FR:{Math.round((DIV_FINISH_RATE[fight.wc]||0.5)*100)}%</span>
+    </div>
+  );
+}
+function SummaryTable(){
+  const results = fights.map(f=>{
+    const r=modelV5(f.f1,f.f2,f.rounds);
+    const ou=predictOU(f);
+    const wF=r.winner==="f1"?f.f1:f.f2;
+    return{id:f.id,f1:f.f1.name,f2:f.f2.name,winner:wF.name,pct:r.winner==="f1"?r.pct1:r.pct2,method:r.method,mConf:r.mConf,signal:ou.signal,over:ou.over,wc:f.wc,card:f.card};
+  });
+
+  const cardOrder=["MAIN EVENT","MAIN CARD","PRELIMS"];
+  const sorted=[...results].sort((a,b)=>{
+    const ai=cardOrder.indexOf(a.card),bi=cardOrder.indexOf(b.card);
+    if(ai!==bi)return ai-bi;
+    return a.id-b.id;
+  });
+
+  const confColor=(p)=>p>=70?"#27ae60":p>=58?"#f0a500":"#e74c3c";
+  const ouColor=(s)=>s==="OVER"?"#e74c3c":s==="UNDER"?"#2980b9":"#888";
+
+  return(
+    <div style={{background:"#fff",borderRadius:10,boxShadow:"0 2px 10px rgba(0,0,0,0.07)",marginBottom:20,overflow:"hidden",border:"1px solid #eee"}}>
+      <div style={{background:"#1a1a2e",padding:"10px 16px"}}>
+        <div style={{fontSize:10,fontFamily:"monospace",fontWeight:700,color:"#f0a500",letterSpacing:"0.15em"}}>RÉSUMÉ — UFC LONDON 21 MARS 2026</div>
+        <div style={{fontSize:8,fontFamily:"monospace",color:"#aaa",marginTop:2}}>Modèle v5 · Stats réelles UFCStats · Filtre données aberrantes</div>
+      </div>
+      <div style={{overflowX:"auto"}}>
+        <table style={{width:"100%",borderCollapse:"collapse",fontSize:9,fontFamily:"monospace"}}>
+          <thead>
+            <tr style={{background:"#f8f8f8",borderBottom:"2px solid #eee"}}>
+              <th style={{padding:"6px 10px",textAlign:"left",color:"#888",fontWeight:700}}>COMBAT</th>
+              <th style={{padding:"6px 10px",textAlign:"center",color:"#888",fontWeight:700}}>DIVISION</th>
+              <th style={{padding:"6px 10px",textAlign:"center",color:"#888",fontWeight:700}}>PRÉDICTION</th>
+              <th style={{padding:"6px 10px",textAlign:"center",color:"#888",fontWeight:700}}>CONF</th>
+              <th style={{padding:"6px 10px",textAlign:"center",color:"#888",fontWeight:700}}>MÉTHODE</th>
+              <th style={{padding:"6px 10px",textAlign:"center",color:"#888",fontWeight:700}}>METH%</th>
+              <th style={{padding:"6px 10px",textAlign:"center",color:"#888",fontWeight:700}}>O/U</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sorted.map((r,i)=>(
+              <tr key={r.id} style={{borderBottom:"1px solid #f0f0f0",background:i%2===0?"#fff":"#fafafa"}}>
+                <td style={{padding:"7px 10px"}}>
+                  <div style={{fontWeight:700,color:"#1a1a2e"}}>{r.f1} vs {r.f2}</div>
+                  <div style={{fontSize:8,color:"#aaa",marginTop:1}}>{r.card}</div>
+                </td>
+                <td style={{padding:"7px 10px",textAlign:"center",color:"#888"}}>{r.wc}</td>
+                <td style={{padding:"7px 10px",textAlign:"center"}}>
+                  <span style={{fontWeight:700,color:"#27ae60"}}>{r.winner}</span>
+                </td>
+                <td style={{padding:"7px 10px",textAlign:"center"}}>
+                  <span style={{fontWeight:700,color:confColor(r.pct)}}>{r.pct}%</span>
+                </td>
+                <td style={{padding:"7px 10px",textAlign:"center"}}>
+                  <MethodBadge method={r.method}/>
+                </td>
+                <td style={{padding:"7px 10px",textAlign:"center",color:"#888"}}>{r.mConf}%</td>
+                <td style={{padding:"7px 10px",textAlign:"center"}}>
+                  <span style={{fontWeight:700,color:ouColor(r.signal)}}>{r.signal}</span>
+                  <div style={{fontSize:8,color:"#aaa"}}>{r.over}%</div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
 }
 
-function FightCard({fight}){
-  const[open,setOpen]=useState(fight.isMain);
-  const{f1,f2}=fight;
-  const res=modelV3(f1,f2,fight.rounds);
-  const{winner,pct1,pct2,method,mConf,bd,ap1,ap2,lp1,lp2,strNet1,strNet2}=res;
-  const winF=winner==="f1"?f1:f2;
-  const winPct=winner==="f1"?pct1:pct2;
+function StatsLegend(){
   return(
-    <div style={{background:"#fff",borderRadius:12,boxShadow:fight.isMain?"0 4px 20px rgba(0,0,0,0.12)":"0 2px 8px rgba(0,0,0,0.07)",marginBottom:12,overflow:"hidden",border:fight.isMain?"2px solid #e74c3c":"1px solid #e8e8e8"}}>
-      {fight.isMain&&<div style={{background:"#e74c3c",color:"#fff",fontSize:9,letterSpacing:"0.25em",fontFamily:"monospace",textAlign:"center",padding:"4px 0",fontWeight:700}}>MAIN EVENT 5 ROUNDS</div>}
-      <div onClick={()=>setOpen(o=>!o)} style={{padding:"14px 16px",cursor:"pointer"}}>
-        <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start"}}>
-          <div style={{flex:1}}>
-            <div style={{fontSize:15,fontWeight:800,color:"#111"}}>{f1.name}</div>
-            <div style={{fontSize:9,color:"#999",fontFamily:"monospace",marginTop:1}}>{f1.record} · {f1.country} · {f1.age}ans</div>
-            <FormRow form={f1.recentForm}/>
-            <div style={{display:"flex",gap:5,marginTop:5,alignItems:"center",flexWrap:"wrap"}}>
-              <span style={{fontSize:12,fontWeight:700,color:oddsCol(f1.odds),fontFamily:"monospace"}}>{fmtOdds(f1.odds)}</span>
-              {ap1>0.03&&<span style={{fontSize:7,background:"#fff4e5",color:"#e67e22",borderRadius:3,padding:"1px 5px",fontFamily:"monospace"}}>-AGE</span>}
-              {lp1>0.03&&<span style={{fontSize:7,background:"#f0f0f0",color:"#888",borderRadius:3,padding:"1px 5px",fontFamily:"monospace"}}>ROUILLE</span>}
-              <span style={{fontSize:7,background:strNet1>0?"#e9f7f0":"#ffeaea",color:strNet1>0?"#27ae60":"#e74c3c",borderRadius:3,padding:"1px 5px",fontFamily:"monospace"}}>NET {strNet1>0?"+":""}{strNet1.toFixed(1)}</span>
-            </div>
+    <div style={{background:"#fff",borderRadius:10,padding:"12px 16px",boxShadow:"0 2px 10px rgba(0,0,0,0.05)",marginBottom:16,border:"1px solid #eee"}}>
+      <div style={{fontSize:9,fontFamily:"monospace",color:"#aaa",letterSpacing:"0.12em",marginBottom:8}}>AMÉLIORATIONS MODÈLE v5</div>
+      <div style={{display:"flex",flexWrap:"wrap",gap:8}}>
+        {[
+          ["🎯","Stats réelles UFCStats","Données directes ufcstats.com"],
+          ["🔒","Cap stats aberrantes","< 3 combats UFC → stats plafonnées"],
+          ["📊","O/U recalibré","Division avg time 50% du calcul"],
+          ["🆕","Badge NEW","Pénalité -5% fighters inexperimentés"],
+          ["🥊","Méthode améliorée","SApM + bothDecision + chin vuln."],
+          ["📈","Forme pondérée","Decay exponentiel + qualité adversaire"],
+        ].map(([icon,title,desc])=>(
+          <div key={title} style={{background:"#f8f8f8",borderRadius:6,padding:"6px 10px",minWidth:140,flex:"1 1 140px"}}>
+            <div style={{fontSize:10,marginBottom:2}}>{icon} <span style={{fontFamily:"monospace",fontWeight:700,color:"#1a1a2e",fontSize:9}}>{title}</span></div>
+            <div style={{fontSize:8,fontFamily:"monospace",color:"#aaa"}}>{desc}</div>
           </div>
-          <div style={{textAlign:"center",padding:"0 10px"}}>
-            <div style={{fontSize:10,fontWeight:700,color:"#bbb",letterSpacing:"0.1em",fontFamily:"monospace"}}>VS</div>
-            <div style={{fontSize:8,color:"#bbb",marginTop:4,fontFamily:"monospace"}}>{fight.time} HE</div>
-            <div style={{fontSize:8,color:"#bbb",marginTop:1,fontFamily:"monospace"}}>{fight.lbs}</div>
-          </div>
-          <div style={{flex:1,textAlign:"right"}}>
-            <div style={{fontSize:15,fontWeight:800,color:"#111"}}>{f2.name}</div>
-            <div style={{fontSize:9,color:"#999",fontFamily:"monospace",marginTop:1}}>{f2.record} · {f2.country} · {f2.age}ans</div>
-            <div style={{display:"flex",justifyContent:"flex-end"}}><FormRow form={f2.recentForm}/></div>
-            <div style={{display:"flex",gap:5,marginTop:5,alignItems:"center",justifyContent:"flex-end",flexWrap:"wrap"}}>
-              <span style={{fontSize:7,background:strNet2>0?"#e9f7f0":"#ffeaea",color:strNet2>0?"#27ae60":"#e74c3c",borderRadius:3,padding:"1px 5px",fontFamily:"monospace"}}>NET {strNet2>0?"+":""}{strNet2.toFixed(1)}</span>
-              {lp2>0.03&&<span style={{fontSize:7,background:"#f0f0f0",color:"#888",borderRadius:3,padding:"1px 5px",fontFamily:"monospace"}}>ROUILLE</span>}
-              {ap2>0.03&&<span style={{fontSize:7,background:"#fff4e5",color:"#e67e22",borderRadius:3,padding:"1px 5px",fontFamily:"monospace"}}>-AGE</span>}
-              <span style={{fontSize:12,fontWeight:700,color:oddsCol(f2.odds),fontFamily:"monospace"}}>{fmtOdds(f2.odds)}</span>
-            </div>
-          </div>
-        </div>
-        <div style={{marginTop:12,display:"flex",alignItems:"center",gap:6}}>
-          <span style={{fontSize:9,fontFamily:"monospace",fontWeight:700,color:"#27ae60",minWidth:30}}>{pct1}%</span>
-          <div style={{flex:1,height:6,background:"#f0f0f0",borderRadius:4,overflow:"hidden"}}>
-            <div style={{width:`${pct1}%`,height:"100%",background:"linear-gradient(90deg,#27ae60,#2ecc71)",borderRadius:4}}/>
-          </div>
-          <span style={{fontSize:9,fontFamily:"monospace",fontWeight:700,color:"#e74c3c",minWidth:30,textAlign:"right"}}>{pct2}%</span>
-        </div>
-        <div style={{marginTop:10,background:"#f8f9fa",borderRadius:8,padding:"8px 12px",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-          <div>
-            <span style={{fontSize:8,color:"#aaa",fontFamily:"monospace",letterSpacing:"0.1em"}}>VAINQUEUR PREVU</span>
-            <div style={{fontSize:13,fontWeight:800,color:"#111",marginTop:1}}>
-              {winF.name.split(" ").pop()}
-              <span style={{fontSize:9,color:"#27ae60",fontFamily:"monospace",fontWeight:700,marginLeft:6}}>{winPct}%</span>
-            </div>
-          </div>
-          <div style={{textAlign:"right"}}>
-            <span style={{fontSize:8,color:"#aaa",fontFamily:"monospace",letterSpacing:"0.1em"}}>METHODE · {mConf}%</span>
-            <div style={{marginTop:3}}><MethodBadge method={method}/></div>
-          </div>
-        </div>
-        <OUSection fight={fight}/>
+        ))}
       </div>
-      {open&&(
-        <div style={{padding:"0 16px 14px",borderTop:"1px solid #f0f0f0"}}>
-          <div style={{paddingTop:12}}>
-            <BdTable bd={bd}/>
-            <div style={{fontSize:8,fontFamily:"monospace",color:"#aaa",letterSpacing:"0.12em",marginBottom:6,marginTop:12}}>STRIKING</div>
-            <StatBar label="SLpM" v1={f1.slpm} v2={f2.slpm}/>
-            <StatBar label="SApM (absorbe)" v1={f1.sapm} v2={f2.sapm}/>
-            <StatBar label="Precision" v1={f1.sacc} v2={f2.sacc} unit="%"/>
-            <StatBar label="Defense" v1={f1.sdef} v2={f2.sdef} unit="%"/>
-            <div style={{fontSize:8,fontFamily:"monospace",color:"#aaa",letterSpacing:"0.12em",marginBottom:6,marginTop:10}}>GRAPPLING</div>
-            <StatBar label="TD / 15 min" v1={f1.td} v2={f2.td}/>
-            <StatBar label="Precision TD" v1={f1.tdacc} v2={f2.tdacc} unit="%"/>
-            <StatBar label="Defense TD" v1={f1.tddef} v2={f2.tddef} unit="%"/>
-            <StatBar label="Soumissions" v1={f1.sub} v2={f2.sub}/>
-            <div style={{fontSize:8,fontFamily:"monospace",color:"#aaa",letterSpacing:"0.12em",marginBottom:6,marginTop:10}}>PALMARES</div>
-            <div style={{display:"flex",gap:6}}>
-              {[f1,f2].map((f,i)=>(
-                <div key={i} style={{flex:1,background:"#f8f9fa",borderRadius:6,padding:"8px 10px"}}>
-                  <div style={{fontSize:9,fontFamily:"monospace",color:"#888",marginBottom:4}}>{f.name.split(" ").pop()}</div>
-                  <div style={{display:"flex",gap:6}}>
-                    {[["KO",f.ko,"#e74c3c"],["SUB",f.s,"#e67e22"],["DEC",f.dec,"#27ae60"]].map(([lbl,val,col])=>(
-                      <div key={lbl} style={{textAlign:"center"}}>
-                        <div style={{fontSize:14,fontWeight:800,color:col}}>{val}</div>
-                        <div style={{fontSize:7,color:"#aaa",fontFamily:"monospace"}}>{lbl}</div>
-                      </div>
-                    ))}
-                  </div>
-                  <div style={{marginTop:5,fontSize:7,fontFamily:"monospace",color:"#bbb"}}>
-                    Def KO:{f.lossTypes.ko} SUB:{f.lossTypes.sub} DEC:{f.lossTypes.dec}
-                  </div>
-                  <div style={{marginTop:3,fontSize:7,fontFamily:"monospace",color:"#bbb"}}>
-                    Reach:{f.reach}" · Layoff:{f.layoff}j
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div style={{fontSize:8,fontFamily:"monospace",color:"#aaa",letterSpacing:"0.12em",marginBottom:6,marginTop:10}}>5 DERNIERS COMBATS</div>
-            <div style={{display:"flex",gap:6}}>
-              {[f1,f2].map((f,fi)=>(
-                <div key={fi} style={{flex:1}}>
-                  <div style={{fontSize:8,fontFamily:"monospace",color:"#888",marginBottom:4,fontWeight:700}}>{f.name.split(" ").pop()}</div>
-                  {f.recentForm.map((r,i)=>(
-                    <div key={i} style={{display:"flex",alignItems:"center",gap:4,marginBottom:3}}>
-                      <span style={{fontSize:8,fontWeight:800,color:r.r==="W"?"#27ae60":"#e74c3c",fontFamily:"monospace",minWidth:10}}>{r.r}</span>
-                      <span style={{fontSize:7,color:"#555",fontFamily:"monospace",flex:1,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{r.opp}</span>
-                      <span style={{fontSize:6,color:r.method==="KO"?"#e74c3c":r.method==="SUB"?"#e67e22":"#888",fontFamily:"monospace",background:"#f0f0f0",borderRadius:2,padding:"1px 3px"}}>{r.method}</span>
-                      {r.oppRank<=15&&<span style={{fontSize:6,color:"#fff",background:"#333",borderRadius:2,padding:"1px 3px",fontFamily:"monospace"}}>#{r.oppRank}</span>}
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-            <div style={{marginTop:10,background:"#f0f8ff",borderRadius:6,padding:"8px 10px"}}>
-              <div style={{fontSize:8,fontFamily:"monospace",color:"#aaa",marginBottom:4}}>TAUX FINISH DIVISION</div>
-              <div style={{display:"flex",alignItems:"center",gap:8}}>
-                <div style={{flex:1,height:6,background:"#e0e0e0",borderRadius:3,overflow:"hidden"}}>
-                  <div style={{width:`${Math.round((DIV_FINISH_RATE[fight.wc]||0.5)*100)}%`,height:"100%",background:"#e74c3c",borderRadius:3}}/>
-                </div>
-                <span style={{fontSize:9,fontFamily:"monospace",fontWeight:700,color:"#e74c3c"}}>{Math.round((DIV_FINISH_RATE[fight.wc]||0.5)*100)}%</span>
-              </div>
-              <div style={{fontSize:7,fontFamily:"monospace",color:"#aaa",marginTop:3}}>
-                Temps moyen division: {DIV_AVG_TIME[fight.wc]||11.0} min
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
 export default function App(){
-  const[tab,setTab]=useState("ALL");
-  const[time,setTime]=useState(new Date().toLocaleTimeString("fr-CA",{hour:"2-digit",minute:"2-digit",second:"2-digit"}));
-  useEffect(()=>{
-    const t=setInterval(()=>setTime(new Date().toLocaleTimeString("fr-CA",{hour:"2-digit",minute:"2-digit",second:"2-digit"})),1000);
-    return()=>clearInterval(t);
-  },[]);
-  const tabs=["ALL","PRELIMS","MAIN CARD","MAIN EVENT"];
-  const filtered=tab==="ALL"?fights:fights.filter(f=>f.card===tab);
+  const[filter,setFilter]=useState("ALL");
+  const[showSummary,setShowSummary]=useState(true);
+
+  const cards=["ALL","MAIN EVENT","MAIN CARD","PRELIMS"];
+  const filtered=filter==="ALL"?fights:fights.filter(f=>f.card===filter);
+
+  // Stats globales
+  const allRes=fights.map(f=>{
+    const r=modelV5(f.f1,f.f2,f.rounds);
+    const ou=predictOU(f);
+    return{method:r.method,signal:ou.signal};
+  });
+  const koCount=allRes.filter(r=>r.method==="KO/TKO").length;
+  const subCount=allRes.filter(r=>r.method==="Soumission").length;
+  const decCount=allRes.filter(r=>r.method==="Decision").length;
+  const overCount=allRes.filter(r=>r.signal==="OVER").length;
+  const underCount=allRes.filter(r=>r.signal==="UNDER").length;
+  const pushCount=allRes.filter(r=>r.signal==="PUSH").length;
+
   return(
-    <div style={{background:"#f0f2f5",minHeight:"100vh",fontFamily:"system-ui,sans-serif"}}>
-      <div style={{background:"#fff",borderBottom:"1px solid #e8e8e8",padding:"14px 16px",position:"sticky",top:0,zIndex:10}}>
-        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-          <div style={{display:"flex",alignItems:"center",gap:8}}>
-            <span style={{fontSize:17,fontWeight:900,letterSpacing:"0.08em",fontFamily:"monospace",background:"linear-gradient(135deg,#e74c3c,#c0392b)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>UFC PREDICTION MODEL</span>
-            <span style={{fontSize:8,fontFamily:"monospace",background:"#27ae60",color:"#fff",borderRadius:3,padding:"2px 6px"}}>v4 8/10</span>
+    <div style={{minHeight:"100vh",background:"#f4f4f4",fontFamily:"monospace"}}>
+      {/* TOP HEADER */}
+      <div style={{background:"linear-gradient(135deg,#1a1a2e,#16213e)",padding:"16px 20px 12px",position:"sticky",top:0,zIndex:100,boxShadow:"0 2px 15px rgba(0,0,0,0.3)"}}>
+        <div style={{maxWidth:700,margin:"0 auto"}}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8}}>
+            <div>
+              <div style={{fontSize:14,fontWeight:700,color:"#fff",letterSpacing:"0.05em"}}>🥊 UFC LONDON</div>
+              <div style={{fontSize:9,color:"#f0a500",letterSpacing:"0.15em",marginTop:1}}>EVLOEV vs MURPHY · 21 MARS 2026 · O2 ARENA</div>
+            </div>
+            <div style={{textAlign:"right"}}>
+              <div style={{fontSize:8,color:"#aaa"}}>MODÈLE</div>
+              <div style={{fontSize:13,fontWeight:700,color:"#27ae60"}}>v5</div>
+            </div>
           </div>
-          <span style={{fontSize:9,color:"#aaa",fontFamily:"monospace"}}>↺ {time}</span>
-        </div>
-        <div style={{fontSize:8,color:"#bbb",fontFamily:"monospace",letterSpacing:"0.1em",marginTop:2}}>
-          FIGHT NIGHT 269 · EMMETT vs VALLEJOS · LAS VEGAS
-        </div>
-        <div style={{display:"flex",gap:4,marginTop:10}}>
-          {tabs.map(t=>(
-            <button key={t} onClick={()=>setTab(t)} style={{fontSize:8,fontFamily:"monospace",letterSpacing:"0.08em",padding:"4px 8px",borderRadius:4,border:"none",cursor:"pointer",fontWeight:700,background:tab===t?"#e74c3c":"#f0f2f5",color:tab===t?"#fff":"#888"}}>
-              {t}
-            </button>
-          ))}
+
+          {/* GLOBAL STATS BAR */}
+          <div style={{display:"flex",gap:6,marginBottom:10}}>
+            {[
+              ["KO/TKO",koCount,"#e74c3c"],
+              ["SUB",subCount,"#e67e22"],
+              ["DEC",decCount,"#27ae60"],
+              ["OVER",overCount,"#e74c3c"],
+              ["UNDER",underCount,"#2980b9"],
+              ["PUSH",pushCount,"#888"],
+            ].map(([label,count,color])=>(
+              <div key={label} style={{background:"rgba(255,255,255,0.08)",borderRadius:6,padding:"4px 8px",textAlign:"center",flex:1}}>
+                <div style={{fontSize:11,fontWeight:700,color}}>{count}</div>
+                <div style={{fontSize:7,color:"#aaa",letterSpacing:"0.08em"}}>{label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* FILTER TABS */}
+          <div style={{display:"flex",gap:4}}>
+            {cards.map(c=>(
+              <button key={c} onClick={()=>setFilter(c)} style={{flex:1,padding:"5px 4px",borderRadius:6,border:"none",background:filter===c?"#f0a500":"rgba(255,255,255,0.08)",color:filter===c?"#000":"#aaa",fontFamily:"monospace",fontSize:8,fontWeight:700,cursor:"pointer",letterSpacing:"0.06em",transition:"all 0.15s"}}>
+                {c==="ALL"?"TOUS":c==="MAIN EVENT"?"M.EVENT":c==="MAIN CARD"?"MAIN":"PRELIMS"}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
-      <div style={{padding:"12px 16px 4px"}}>
-        <span style={{fontSize:9,letterSpacing:"0.2em",fontFamily:"monospace",color:"#aaa",fontWeight:700}}>
-          PREDICTIONS PRE-COMBAT · MODELE v4 · STATS 100% UFCSTATS
-        </span>
-      </div>
-      <div style={{padding:"4px 12px 24px"}}>
-        {filtered.map(f=><FightCard key={f.id} fight={f}/>)}
-      </div>
-      <div style={{background:"#fff",borderTop:"1px solid #e8e8e8",padding:"12px 16px"}}>
-        <div style={{fontSize:8,fontFamily:"monospace",color:"#bbb",letterSpacing:"0.08em",marginBottom:6}}>MODELE v4 · VARIABLES · SOURCE: UFCSTATS.COM</div>
-        <div style={{display:"flex",flexWrap:"wrap",gap:5}}>
-          {["SLpM reel","SApM reel","Str.Acc reel","Str.Def reel","TD Avg reel","TD Acc reel","TD Def reel","Sub Avg reel","Forme recente ponderee","Age penalty","Layoff penalty","Reach adv","Style matchup","Chin vulnerability","Div finish rate UFC","Div avg time UFC"].map(v=>(
-            <span key={v} style={{fontSize:7,fontFamily:"monospace",background:"#f0f2f5",color:"#888",borderRadius:3,padding:"2px 6px"}}>{v}</span>
-          ))}
+
+      {/* CONTENT */}
+      <div style={{maxWidth:700,margin:"0 auto",padding:"14px 12px"}}>
+        {/* TOGGLE SUMMARY */}
+        <button onClick={()=>setShowSummary(!showSummary)} style={{width:"100%",marginBottom:12,background:"#fff",border:"1px solid #eee",borderRadius:8,padding:"8px",fontFamily:"monospace",fontSize:9,color:"#888",cursor:"pointer",boxShadow:"0 1px 4px rgba(0,0,0,0.05)"}}>
+          {showSummary?"▲ CACHER RÉSUMÉ":"▼ VOIR RÉSUMÉ COMPLET"}
+        </button>
+
+        {showSummary&&<SummaryTable/>}
+        <StatsLegend/>
+
+        {filtered.map(f=>(
+          <FightCard key={f.id} fight={f}/>
+        ))}
+
+        {/* FOOTER */}
+        <div style={{textAlign:"center",padding:"16px 0 8px",fontSize:8,fontFamily:"monospace",color:"#bbb"}}>
+          UFC Model v5 · Stats UFCStats.com · Filtre aberrantes · O/U recalibré
+          <br/>À titre informatif seulement — pas de conseils de paris
         </div>
       </div>
     </div>
