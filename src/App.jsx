@@ -105,7 +105,7 @@ const fights = [
         ko:4,dec:6,s:1,reach:74,layoff:196,
         recentForm:[{r:"W",opp:"McKee",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"D",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"}],
         lossTypes:{ko:0,sub:0,dec:0},rank:99}},
-];
+
   { id:8, card:"MAIN CARD", time:"16:00", rounds:3, wc:"Featherweight", lbs:"145 lbs", ou:2.5,
     f1:{name:"N. Wood",full:"Nathaniel Wood",country:"GBR",record:"22-6",age:32,odds:-175,ucfFights:12,
         slpm:5.74,sapm:4.32,sacc:52,sdef:54,td:1.46,tdacc:50,tddef:73,sub:0.5,
