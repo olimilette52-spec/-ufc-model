@@ -104,7 +104,7 @@ const fights = [
         ko:4,dec:6,s:1,reach:74,layoff:196,
         recentForm:[{r:"W",opp:"McKee",oppRank:99,method:"KO"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"DEC"},{r:"D",opp:"opp",oppRank:99,method:"DEC"},{r:"W",opp:"opp",oppRank:99,method:"KO"}],
         lossTypes:{ko:0,sub:0,dec:0},rank:99}},
-];
+
 
 
 
